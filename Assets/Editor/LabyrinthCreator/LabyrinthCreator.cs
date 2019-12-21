@@ -276,8 +276,8 @@ class MazeBuilder : EditorWindow {
 					tempMaterial.mainTexture = (Texture)AssetDatabase.LoadAssetAtPath ("Assets/Materials/Textures/" + room.FloorTexture, typeof(Texture));
 					floor.GetComponent<MeshRenderer> ().sharedMaterial = tempMaterial;
                     floor.GetComponent<MeshRenderer>().sharedMaterial.mainTextureScale = new Vector2(floorTiling, floorTiling); //BB, 20171203, setting tiling to the XML value
-                    floor.GetComponent<MeshRenderer>().sharedMaterial.SetTexture("_BumpMap", new Texture()); //BB, 20171203, set a new Texture for ellimination of the wall16_Normap map
-                    floor.GetComponent<MeshRenderer>().sharedMaterial.SetTexture("_OcclusionMap", new Texture()); //BB, 20171203, set a new Texture for ellimination of the wall16_Ambient_Occlusion map
+                    floor.GetComponent<MeshRenderer>().sharedMaterial.SetTexture("_BumpMap", new Texture2D(32,32)); //BB, 20171203, set a new Texture for ellimination of the wall16_Normap map
+                    floor.GetComponent<MeshRenderer>().sharedMaterial.SetTexture("_OcclusionMap", new Texture2D(32, 32)); //BB, 20171203, set a new Texture for ellimination of the wall16_Ambient_Occlusion map
                 }
 
 				if (room.CeilingTexture != null && room.CeilingTexture != "") {
@@ -287,8 +287,8 @@ class MazeBuilder : EditorWindow {
 					tempMaterial.mainTexture = (Texture)AssetDatabase.LoadAssetAtPath ("Assets/Materials/Textures/" + room.CeilingTexture, typeof(Texture));
 					ceiling.GetComponent<MeshRenderer> ().sharedMaterial = tempMaterial;
                     ceiling.GetComponent<MeshRenderer>().sharedMaterial.mainTextureScale = new Vector2(ceilingTiling, ceilingTiling); //BB, 20171203, setting tiling to the XML value
-					ceiling.GetComponent<MeshRenderer> ().sharedMaterial.SetTexture("_BumpMap", new Texture() ); //BB, 20171203, set a new Texture for ellimination of the wall16_Normap map
-					ceiling.GetComponent<MeshRenderer> ().sharedMaterial.SetTexture("_OcclusionMap", new Texture() ); //BB, 20171203, set a new Texture for ellimination of the wall16_Ambient_Occlusion map
+					ceiling.GetComponent<MeshRenderer> ().sharedMaterial.SetTexture("_BumpMap", new Texture2D(32, 32)); //BB, 20171203, set a new Texture for ellimination of the wall16_Normap map
+                    ceiling.GetComponent<MeshRenderer> ().sharedMaterial.SetTexture("_OcclusionMap", new Texture2D(32, 32)); //BB, 20171203, set a new Texture for ellimination of the wall16_Ambient_Occlusion map
 				}
 
                 if (room.StartingRoom)
